@@ -533,7 +533,7 @@ The included `.gitignore` keeps `__pycache__/`, virtual environments, editor set
 
 ## License
 
-
+This project is distributed under the terms of the license in the [LICENSE](LICENSE) file.
 
 * * *
 
