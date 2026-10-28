@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duplicake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">🍰</span>
+      <div>
+        <h1>Duplicake</h1>
+        <p>Find identical and near-identical photos. Find Duplicakes!.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card bake">
+      <label class="field">
+        <span>Folder to scan (subfolders included)</span>
+        <div class="row">
+          <input id="path" placeholder="C:\Users\you\Pictures  or  /home/you/Pictures" autocomplete="off">
+          <button class="btn ghost" id="browse" type="button">Browse</button>
+        </div>
+      </label>
+      <label class="field">
+        <span>Strictness <b id="thrVal">78%</b></span>
+        <input id="thr" type="range" min="60" max="95" value="78">
+        <small class="scale"><i>Looser: more batches</i><i>Stricter: near-identical only</i></small>
+      </label>
+      <div class="row end"><button class="btn primary" id="scan" type="button">Find Duplicakes</button></div>
+      <div id="progress" class="progress" hidden>
+        <div class="bar"><i id="barFill"></i></div>
+        <p id="progressText"></p>
+      </div>
+    </section>
+
+    <section id="stats" class="stats" hidden>
+      <div><b id="sImages">0</b><span>photos scanned</span></div>
+      <div><b id="sFolders">0</b><span>folders with photos</span></div>
+      <div><b id="sBatches">0</b><span>batches</span></div>
+      <div><b id="sSpace">0 B</b><span>can be freed</span></div>
+    </section>
+
+    <section id="toolbar" class="toolbar" hidden>
+      <label class="check"><input type="checkbox" id="perm"> Delete permanently (skip Recycle Bin / Trash)</label>
+      <button class="btn primary" id="keepAll" type="button">Keep the best of every batch</button>
+    </section>
+
+    <section id="results"></section>
+  </main>
+
+  <dialog id="browser" class="card">
+    <h2>Pick a folder</h2>
+    <p id="curPath" class="muted"></p>
+    <ul id="dirList"></ul>
+    <div class="row end">
+      <button class="btn ghost" id="cancelBrowse" type="button">Cancel</button>
+      <button class="btn primary" id="useFolder" type="button">Use this folder</button>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
