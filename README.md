@@ -1,5 +1,6 @@
 <div align="center">
-
+<img src='static/img/duplicake_logo.svg' width='200' height='200'>
+  
 # Duplicake
 
 ### Find your duplicate slices (photos, hehe)
