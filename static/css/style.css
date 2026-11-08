@@ -24,7 +24,13 @@ h1, h2, h3, p { margin: 0; }
     radial-gradient(circle at 75px 0, var(--pink-2) 16px, transparent 17px) 0 0 / 90px 34px repeat-x;
 }
 .brand { max-width: 980px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
-.logo { display: grid; place-items: center; width: 64px; height: 64px; font-size: 36px; background: #fff; border-radius: 22px; box-shadow: 0 5px 0 var(--butter-2); }
+.logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 22px;              
+}
+
 .brand h1 { font-size: 34px; font-weight: 600; line-height: 1.1; }
 .brand p { font-size: 15px; margin-top: 2px; }
 
